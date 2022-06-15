@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
+
 function Navbar(){
 return (
         <div>
@@ -38,19 +41,23 @@ return (
                     <nav id="dl-menu">
                       {/* class="dl-menu" */}
                       <ul className="main-menu dl-menu">
-                        <li className="menu-item   current-menu-parent menu-item-has-children    ">
-                          <a >Home</a>
-                         
-                          
+                      <Link to="/">
+                      <li className="menu-item   current-menu-parent menu-item-has-children    ">
+                      <a >Home</a>
                         </li>
+                        </Link>
+
+                        <Link to="/listing">
                         <li className="menu-item current-menu-parent menu-item-has-children  ">
-                          <a routerlink="/list"> Listing </a>
-                          {/*class=" dl-submenu "*/}
+                        <a> Listing </a>
                         </li>
+                         
+                        </Link>
+                       
                         <li>
                           <ul>
                             <li className="menu-item "><a routerlink="/contact">contact</a></li>
-                            <li className="menu-item active-color "><a routerlink="/about">About</a></li>
+                            <li className="menu-item "><a routerlink="/about">About</a></li>
                             <li className="menu-item  "><a>Login</a></li>
                           </ul>
                         </li>

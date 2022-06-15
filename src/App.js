@@ -22,16 +22,18 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <Router>
-
-    
         <div classNameName="App">
       <Navbar/>
       <Routes>
-        <Route path="/"  component={Home} />
-        <Route path="/about"  component={About} />
-        <Route path="/contact"  component={Contact} />
-        <Route path="/listing"  component={Listing} />
-        <Route path="/login"  component={Login} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/about"  element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/listing" element={<Listing/>} />
+        <Route path="/login"   element={<Login/>} />
+        <Route path="/reservation"  element={<Reservation/>} />
+        <Route path="/complaint" element={<Complaint/>} />
+        <Route path="/profil" element={<Profil/>} />
+        <Route path="/historical"   element={<Historical/>} />
       </Routes>
 
     </div>
