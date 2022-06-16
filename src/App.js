@@ -34,6 +34,7 @@ function App() {
         <Route path="/complaint" element={<Complaint/>} />
         <Route path="/profil" element={<Profil/>} />
         <Route path="/historical"   element={<Historical/>} />
+        <Route path="/Register"   element={<Register/>} />
       </Routes>
 
     </div>

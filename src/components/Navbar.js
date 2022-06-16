@@ -29,7 +29,7 @@ return (
                           </button>
                           <ul className="dropdown-menu">
                             <li><a>Login</a></li>
-                            <li><a routerlink="/register">Register</a></li>
+                            <li><Link to="/register">Register</Link></li>
                           </ul>
                         </div>
                       </div>
@@ -56,9 +56,9 @@ return (
                        
                         <li>
                           <ul>
-                            <li className="menu-item "><a routerlink="/contact">contact</a></li>
-                            <li className="menu-item "><a routerlink="/about">About</a></li>
-                            <li className="menu-item  "><a>Login</a></li>
+                            <li className="menu-item "><Link to="/contact">contact</Link></li>
+                            <li className="menu-item "><Link to="/about">About</Link></li>
+                            <li className="menu-item  "><Link to="/login">Login</Link></li>
                           </ul>
                         </li>
                       </ul>
