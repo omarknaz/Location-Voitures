@@ -4,6 +4,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import {login} from '../../redux/actions/user.action';
+import Navbar from "../Navbar";
 function Login(){
 
  
@@ -30,13 +31,15 @@ function Login(){
 
  
     return (
+      <>
+       <div><Navbar /></div>
         <div>
          
           {/* //////////////////////////////// */}
-          <div className="wheel-start3">
+          <div className="">
             <img src="assets/images/bg7.jpg" alt="" className="wheel-img" />
             <div className="container">
-              <div className="row">
+              {/* <div className="row">
                 <div className="col-xs-12 padd-lr0">
                   <div className="wheel-start3-body clearfix marg-lg-t255 marg-lg-b75 marg-sm-t190 marg-xs-b30">
                     <h3>Login</h3>
@@ -46,7 +49,7 @@ function Login(){
                     </ol>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* /////////////////////////////////// */}
@@ -107,6 +110,7 @@ function Login(){
             </div>
           </div>
         </div>
+        </>
       );
 }
 export default Login

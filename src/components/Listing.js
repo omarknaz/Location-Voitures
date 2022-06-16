@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Navbar from "./Navbar";
 
 function Listing () {
           return (
+            <>
+       <div><Navbar /></div>
             <div>
               
               {/* //////////////////////////////// */}
@@ -371,6 +374,7 @@ function Listing () {
                 </div>
               </div>
             </div>
+            </>
           );
         }
       

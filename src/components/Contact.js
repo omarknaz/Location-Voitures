@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Navbar from "./Navbar";
   function Contact(){
     return (
+      <>
+       <div><Navbar /></div>
         <div>
           
           {/* //////////////////////////////// */}
+          <br></br>
           <div className="container">
             <div className="row">
               <div className="col-sm-3 col-xs-6">
@@ -85,6 +89,7 @@ import { Link } from 'react-router-dom';
             </div>
           </div>
         </div>
+        </>
     );
   }      
 

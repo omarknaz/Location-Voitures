@@ -4,6 +4,7 @@ import { useState } from 'react';
 //import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from 'react-redux'
+import Navbar from "../Navbar";
 
 
 import {register} from '../../redux/actions/user.action';
@@ -123,15 +124,17 @@ function Register(){
 
 
     return (
+      <>
+       <div><Navbar /></div>
                 <div>
                  
                   {/* //////////////////////////////// */}
-                  <div className="wheel-start3">
-                    <img src="images/bg7.jpg" alt="" className="wheel-img" />
+                  <div className="">
+                    <img src="assets/images/bg7.jpg" alt="" className="wheel-img" />
                     <div className="container">
-                      <div className="row">
+                      {/* <div className="row">
                         <div className="col-xs-12 padd-lr0">
-                          <div className="wheel-start3-body clearfix marg-lg-t255 marg-lg-b75 marg-sm-t190 marg-xs-b30">
+                          <div className="wheel-start3-body clearfix marg-lg-t255 marg-lg-b2 marg-sm-t190 marg-xs-b30">
                             <h3>Register</h3>
                             <ol className="breadcrumb">
                               <li><a>Home</a></li>
@@ -139,7 +142,7 @@ function Register(){
                             </ol>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   {/* /////////////////////////////////// */}
@@ -196,6 +199,7 @@ function Register(){
                     </div>
                   </div>
                 </div>
+                </>
               );
             
       

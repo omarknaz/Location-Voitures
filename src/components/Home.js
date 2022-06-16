@@ -1,17 +1,24 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Navbar from "./Navbar";
 
 function Home(){
     return (
+       <>
+       <div><Navbar /></div>
         <div>
           {/* MAIN */}
           
           {/* ////////////////////////////////////////// */}
           <div className="wheel-start wheel-start2">
-            <img src="assets/images/bg5.jpg" alt="" className="wheel-img" />
+            <img src="" alt="" className="wheel-img" />
             <div className="container padd-lr0">
               <div className="col-lg-12">
                 <header className="wheel-header text-center marg-lg-t80 ">
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
                   <h1>Search - Hire - Compare - Save</h1>
                   <h5>We Help you to Rent your DREAM CAR</h5>
                 </header>
@@ -165,7 +172,9 @@ function Home(){
             </div>
           </div>
         </div>
+        </>
       );
+
 }
 export default Home
     

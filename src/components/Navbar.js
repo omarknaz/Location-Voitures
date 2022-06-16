@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
+
 function Navbar(){
 return (
         <div>
@@ -59,6 +60,7 @@ return (
                             <li className="menu-item "><Link to="/contact">contact</Link></li>
                             <li className="menu-item "><Link to="/about">About</Link></li>
                             <li className="menu-item  "><Link to="/login">Login</Link></li>
+                            <li className="menu-item  "><Link to="/register">register</Link></li>
                           </ul>
                         </li>
                       </ul>
