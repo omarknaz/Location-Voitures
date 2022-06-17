@@ -67,7 +67,7 @@ import { useNavigate } from "react-router-dom";
             </header>
             <form onSubmit={e => e.preventDefault()}>
               
-              <textarea placeholder="Your complaint *" value={reclamation} onChange={handlereclamation}  />
+              <textarea placeholder="Your complaint *" value={reclamation} onChange={handlereclamation}  required/>
               <button onClick={handleSubmit} >Submit Now</button>
             </form>
           </section>

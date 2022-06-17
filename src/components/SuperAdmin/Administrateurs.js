@@ -1,8 +1,111 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from "axios";
+import swal from "sweetalert";
 function Administrateurs() {
-      return (
+
+  // const [admin, setadmin] = useState([])
+  // useEffect(()=>{
+  //   async function getAlladmin(){
+  //     try {
+  //       const admin = await axios.get("")
+  //       console.log(students.data)
+  //       setStudents(students.data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   getAllStudent()
+  // }, [])
+
+
   
+  const [admin,setadmins] = useState([]);
+
+
+   //List admin 
+     useEffect(() => {
+    let isMounted = true
+
+    const token = localStorage.getItem('token');
+   
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + `${token}`
+    }
+    
+    axios.get("http://127.0.0.1:8000/api/ShowAdmin", {
+        headers: headers
+      })
+    .then(res => {
+        console.log('heydata',res.data)
+        setadmins(res.data.admins)
+     
+    
+    }).catch(err => {
+      console.log(err)
+    })
+
+    return() => {isMounted =false
+    };
+
+  });
+ 
+
+  function deleteOperation(id){
+    const token = localStorage.getItem('token');
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + `${token}`
+    }
+    axios.delete("http://127.0.0.1:8000/api/deleteadmin/"+id, {
+      headers: headers
+    })
+  .then(res => {
+      console.log(res.data.message)
+      swal.fire({
+        title: 'Are you sure??',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'yes',
+        denyButtonText: `No`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          swal.fire('deleted', '', 'error')
+          window.location.reload(false);
+        } else if (result.isDenied) {
+          swal.fire('youu kept it ', '', 'success')
+        }
+      })
+   
+  
+  }).catch(err => {
+    console.log(err)
+  })
+   
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+      return (
+      
         <div className="wrapper ">
           <div className="sidebar" data-color="white" data-active-color="danger">
             <div className="logo">
@@ -74,47 +177,25 @@ function Administrateurs() {
                              
                             </tr></thead>
                           <tbody>
-                            <tr>
-                              <td>
-                                Aymen Hamdi
-                              </td>
-                              <td>
-                                aymen.hamdi@gmail.com
-                              </td>
-                              
-                              &nbsp; &nbsp; &nbsp; 
-                        <button type="submit" className="btn btn-primary btn-round">Update </button>
-                        &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
-                        &nbsp; &nbsp; &nbsp; 
-                            </tr>
-                            <tr>
-                              <td>
-                                Saleh trabelsi
-                              </td>
-                              <td>
-                                saleh.trabelsi@gmail.com
-                              </td>
-                              
-                              &nbsp; &nbsp; &nbsp; 
-                              <button type="submit" className="btn btn-primary btn-round">Update </button>
-                        &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
-                        &nbsp; &nbsp; &nbsp; 
-                            </tr>
-                            <tr>
-                              <td>
-                                Mohamed Toumi
-                              </td>
-                              <td>
-                                mohame1999@gmail.com
-                              </td>
-                              
-                              &nbsp; &nbsp; &nbsp; 
-                              <button type="submit" className="btn btn-primary btn-round">Update </button>
-                        &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
-                            </tr>
+
+                          {admin?.map((admins) => (
+                             <tr>
+                             <td>
+                             <p>{admins.name}</p>
+                             </td>
+                             <td>
+                             <p>{admins.email}</p>
+                             </td>
+                             &nbsp; &nbsp; &nbsp; 
+                            <button type="submit" className="btn btn-primary btn-round">Update </button>
+                            &nbsp; &nbsp; &nbsp; 
+                            <button className="button" type="button" onClick={()=>deleteOperation(admins.id)} > Delete</button>
+                            &nbsp; &nbsp; &nbsp; 
+                        
+                           </tr>
+                         
+                           
+                          ))}
                             
                           </tbody>
                           
