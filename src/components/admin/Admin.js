@@ -1,66 +1,57 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 function Admin() {
       return (
   
         <div className="wrapper ">
           <div className="sidebar" data-color="white" data-active-color="danger">
             <div className="logo">
-              <a href="https://www.creative-tim.com" className="simple-text logo-mini">
+            <a className="simple-text logo-mini">
                 <div className="logo-image-small">
                   <img src="/assets/images/logo-small.png" />
                 </div>
                 {/* <p>CT</p> */}
-              </a>
-              <a href="https://www.creative-tim.com" className="simple-text logo-normal">
-                PFE Backoffice
-                {/* <div class="logo-image-big">
-              <img src="../assets/img/logo-big.png">
-            </div> */}
-              </a>
+                </a>
+                <a href="https://www.creative-tim.com" className="simple-text logo-normal">
+                WheelCar Backoffice
+                </a>
             </div>
             <div className="sidebar-wrapper">
               <ul className="nav">
                 <li className="active ">
                   <a>
-                    <i className="nc-icon nc-bank" />
+                  <i className="nc-icon nc-bank" />
                     <p>Dashboard</p>
                   </a>
+                    
+                  
                 </li>
                 <li>
-                  <a className="active" routerlink="/data-tables" routerlinkactive="active">
-                    <i className="nc-chart-bar-32" />
-                    <p>Data tables</p>
-                  </a>
+                 <a>
+                 <i className="nc-chart-bar-32" />
+                   <Link to="/datatables">Data tables</Link>  
+                 </a>
+                    
+                  
+                </li>
+               
+                <li>
+                  <a> <i className="nc-icon nc-bell-55" />
+                    <Link to="/reclamation">Complaints</Link></a>
+                   
+                
                 </li>
                 <li>
-                  <a  routerlinkactive="active">
-                    <i className="nc-icon nc-bell-55" />
-                    <p>Gérer Administrateurs</p>
-                  </a>
+                  <a> <i className="nc-icon nc-single-02" />
+                    <Link to="/clients">Clients</Link>
+                </a>
+                   
                 </li>
                 <li>
-                  <a routerlink="/maps" routerlinkactive="active">
-                    <i className="nc-icon nc-bell-55" />
-                    <p>Gérer Réservations</p>
-                  </a>
-                </li>
-                <li>
-                  <a routerlink="/notifications" routerlinkactive="active">
-                    <i className="nc-icon nc-bell-55" />
-                    <p>Gérer réclamations</p>
-                  </a>
-                </li>
-                <li>
-                  <a routerlink="/user-profile" routerlinkactive="active">
-                    <i className="nc-icon nc-single-02" />
-                    <p>Gérer clients</p>
-                  </a>
-                </li>
-                <li>
-                  <a routerlink="/user-profile" routerlinkactive="active">
-                    <i className="nc-icon nc-single-02" />
-                    <p>Gérer Voitures</p>
-                  </a>
+                 <a>  <i className="nc-icon nc-single-02" />
+                    <Link to="/voitures">Voitures</Link></a>
+                  
+                  
                 </li>
               </ul>
             </div>

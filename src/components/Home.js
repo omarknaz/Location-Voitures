@@ -51,30 +51,7 @@ function Home(){
                   </div>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-xs-12 padd-lr0  marg-lg-b150  marg-md-b50">
-                  <div className="wheel-testimonial-item">
-                    <i className="fa fa-users" />
-                    <span data-to={753} data-speed={10000} /><b>+</b>
-                    <p>Dedicated Employees</p>
-                  </div>
-                  <div className="wheel-testimonial-item">
-                    <i className="fa fa-thumbs-o-up" />
-                    <span data-to={9053} data-speed={5000} /><b>+</b>
-                    <p>Satisfied Customers</p>
-                  </div>
-                  <div className="wheel-testimonial-item">
-                    <i className="fa  fa-car" />
-                    <span data-to={529} data-speed={6000} /><b>+</b>
-                    <p>100% Fit Veihicles</p>
-                  </div>
-                  <div className="wheel-testimonial-item">
-                    <i className="fa fa-trophy" />
-                    <span data-to={111} data-speed={1000} /><b>+</b>
-                    <p>Int. Awards Achieved</p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
           {/* ////////////////////////////////////////// */}
@@ -105,7 +82,9 @@ function Home(){
                                   <li><i className="fa fa-user" /><span>2 Passengers</span></li>
                                   <li><i className="fa fa-tachometer" /><span>5.6/100 MPG</span></li>
                                 </ul>
-                                <a href="#" className="wheel-btn">View All rental Car</a>
+                                <Link to="/listing"><button className="wheel-btn">View All rental Car</button>
+                                </Link>
+                                
                               </div>
                             </div>
                           </div>

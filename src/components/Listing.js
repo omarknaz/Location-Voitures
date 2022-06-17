@@ -141,7 +141,7 @@ function Listing () {
                         <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
                           <div className="product-table2">
                             <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i31.jpg" alt="img" className="img-responsive" />
+                              <img src="assets/images/i34.jpg" alt="img" className="img-responsive" />
                             </div>
                           </div>
                           <div className="product-table3  ">

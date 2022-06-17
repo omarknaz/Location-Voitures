@@ -15,8 +15,11 @@ import Historical from './components/Home-client/Historical';
 import Admin from './components/admin/Admin';
 import DataTables from './components/admin/Data-tables';
 import Reclamation from './components/admin/Reclamation';
-import Voiture from './components/admin/Voitures';
+import Voitures from './components/admin/Voitures';
 import Navbar from './components/Navbar';
+import Clients from './components/admin/Clients';
+import Administrateurs from './components/SuperAdmin/Administrateurs';
+
 
 
 function App() {
@@ -37,6 +40,12 @@ function App() {
         <Route path="/historical"   element={<Historical/>} />
         <Route path="/register"   element={<Register/>} />
         <Route path="/admin"   element={<Admin/>} />
+        <Route path="/reclamation"   element={<Reclamation/>} />
+        <Route path="/voitures"   element={<Voitures/>} />
+        <Route path="/datatables"   element={<DataTables/>} />
+        <Route path="/clients"   element={<Clients/>} />
+        <Route path="/superadministrateurs"   element={<Administrateurs/>} />
+         
       </Routes>
        
     </div>

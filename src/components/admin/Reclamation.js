@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 function Reclamation() {
       return (
   
@@ -12,7 +13,7 @@ function Reclamation() {
                 <p />
               </a>
               <a className="simple-text logo-normal">
-                PFE Backoffice
+                WheelCar Backoffice
                 <div className="logo-image-big">
                 </div>
               </a>
@@ -20,46 +21,38 @@ function Reclamation() {
             <div className="sidebar-wrapper">
               <ul className="nav">
                 <li>
-                  <a>
-                    <i className="nc-icon nc-bank" />
-                    <p>Dashboard</p>
-                  </a>
+                  <a><i className="nc-icon nc-bank" />
+                    <Link to="/admin">Dashboard</Link></a>
+                  
                 </li>
+
                 <li>
-                  <a routerlink="/data-tables" routerlinkactive="active">
-                    <i className="nc-chart-bar-32" />
-                    <p>Data tables</p>
-                  </a>
+                  <a><i className="nc-chart-bar-32" />
+                   <Link to="/datatables">Data tables</Link></a>
+                    
+                  
                 </li>
-                <li>
-                  <a routerlink="/maps" routerlinkactive="active">
-                    <i className="nc-icon nc-bell-55" />
-                    <p>Gérer Demandes</p>
-                  </a>
-                </li>
-                <li>
-                  <a className="active" routerlink="/notification" routerlinkactive="active">
-                    <i className="nc-icon nc-bell-55" />
-                    <p>Gérer Réservations</p>
-                  </a>
-                </li>
+
+               
+              
+
                 <li className="active ">
-                  <a routerlink="/notifications" routerlinkactive="active">
-                    <i className="nc-icon nc-bell-55" />
-                    <p>Gérer réclamations</p>
-                  </a>
+                  <a> <i className="nc-icon nc-bell-55" />
+                    <p>Complaint</p></a>
+                   
+                  
                 </li>
                 <li>
-                  <a routerlink="/user-profile" routerlinkactive="active">
-                    <i className="nc-icon nc-single-02" />
-                    <p>Gérer clients</p>
+              <a><i className="nc-icon nc-single-02" />
+                    <Link to="/clients">Clients</Link>
                   </a>
+                    
                 </li>
                 <li>
-                  <a routerlink="/user-profile" routerlinkactive="active">
-                    <i className="nc-icon nc-single-02" />
-                    <p>Gérer Voitures</p>
+              <a><i className="nc-icon nc-single-02" />
+                    <Link to="/voitures">Voitures</Link>
                   </a>
+                    
                 </li>
               </ul>
             </div>
