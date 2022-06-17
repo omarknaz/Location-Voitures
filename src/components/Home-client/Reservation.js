@@ -2,6 +2,13 @@ import React from "react";
 import Navbar from "../Navbar";
 
 function Reservation() {
+
+
+
+
+
+
+  
       return (
         <>
         <div><Navbar /></div>

@@ -1,6 +1,44 @@
  import React from "react";
+import { useNavigate } from "react-router-dom";
  import Navbar from "../Navbar";
+ import { useDispatch, useSelector } from 'react-redux'
+ import { useState } from 'react';
+ import {postreclamation} from '../../redux/actions/user.action';
+
+
+
  function Complaint() {
+  const [reclamation, setreclamation] = useState("");
+
+  const dispatch = useDispatch();
+  const navigate =useNavigate();
+
+  const handlereclamation = (e) => {
+    setreclamation(e.target.value)
+  }
+
+
+  const handleSubmit = async () => {
+  
+    let data = {
+      reclamation: reclamation,
+     
+
+    }
+
+    let Authorization = localStorage.getItem("token");
+    dispatch(await postreclamation(data, Authorization , navigate))
+    
+      
+    }
+  
+
+
+
+
+
+
+
       return (
         <>
         <div><Navbar /></div>
@@ -27,11 +65,10 @@
             <header>
               <h3>Leave a Complaint</h3>
             </header>
-            <form>
-              <input type="text" placeholder="Your Name *" />
-              <input type="text" placeholder="Your Email *" />
-              <textarea placeholder="Your Message *" defaultValue={""} />
-              <button>Submit Now</button>
+            <form onSubmit={e => e.preventDefault()}>
+              
+              <textarea placeholder="Your complaint *" value={reclamation} onChange={handlereclamation}  />
+              <button onClick={handleSubmit} >Submit Now</button>
             </form>
           </section>
           <div className="wheel-footer-info wheel-bg6">

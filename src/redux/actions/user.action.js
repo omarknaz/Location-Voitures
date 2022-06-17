@@ -71,3 +71,54 @@ export const login = (body,navigate ) => async dispatch => {
           })
     }
 }
+
+
+
+// export const login = (body,history ) => async dispatch => {
+//     try{
+//         const res = await axios.post(`http://127.0.0.1:8000/api/login`,body);
+//         console.log('heydata',res.data)
+//         dispatch( {
+//             type: LOGIN_SUCCESS,
+//             payload: res.data.res
+//         })
+//         swal("success",res.data.message,"success");
+
+//         res.data.success !== undefined && res.data.success && 
+//         localStorage.setItem("user",JSON.stringify(res.data))
+//         localStorage.setItem("token",res.data.access_token)
+//         history.push('/');
+//         window.location.reload(false);
+//     }
+//     catch(e){
+//         console.log('heyerror',e)
+//     }
+// }
+
+
+
+export const postreclamation = (body,Authorization,navigate) => async dispatch => {
+  
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + `${Authorization}`
+      }
+      
+      axios.post("http://127.0.0.1:8000/api/AddReclamation", body, {
+          headers: headers
+        })
+        .then((response) => {
+            console.log('hey intervention',response.data)
+            dispatch( {
+                type: REGISTER_SUCCESS,
+                payload: response.data.res
+               
+            })
+            Swal.fire('your complaint is sent!', '', 'success');
+            navigate("/")
+        })
+        .catch((error) => {
+            console.log('heyerror',error)
+           
+        })
+}
