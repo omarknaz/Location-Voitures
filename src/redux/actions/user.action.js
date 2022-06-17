@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { LOGIN_SUCCESS, REGISTER_SUCCESS } from '../types';
 import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 
 import { Navigate } from 'react-router-dom';
 
@@ -19,6 +20,12 @@ export const register = (body,navigate) => async dispatch => {
     }
     catch(e){
         console.log('heyerror',e)
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
     }
 }
 
@@ -44,7 +51,7 @@ export const login = (body,navigate ) => async dispatch => {
 
         var role =localStorage.getItem("role");
         if (role == 'user'){
-            navigate('/about');
+            navigate('/');
         }
         else if (role == 'admin') {
             navigate('/admin')
@@ -56,5 +63,11 @@ export const login = (body,navigate ) => async dispatch => {
     }
     catch(e){
         console.log('heyerror',e)
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'wrong Email / Password!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
     }
 }

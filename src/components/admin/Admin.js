@@ -69,7 +69,7 @@ function Admin() {
             {/* Navbar */}
             <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
               <div className="container-fluid">
-                <div className="navbar-wrapper">
+                <div className="navbar-wrapper">  
                   <div className="navbar-toggle">
                    
                   </div>

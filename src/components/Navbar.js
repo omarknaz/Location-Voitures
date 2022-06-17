@@ -4,6 +4,49 @@ import { Link } from 'react-router-dom';
 
 
 function Navbar(){
+  var AuthButtons ='';
+  if(!localStorage.getItem('token')){
+    AuthButtons =(
+      <ul>
+      <li className="menu-item "><Link to="/">Home</Link></li>
+      <li className="menu-item "><Link to="/listing">Listing</Link></li>
+      <li className="menu-item "><Link to="/contact">contact</Link></li>
+      <li className="menu-item "><Link to="/about">About</Link></li>
+      <li className="menu-item  "><Link to="/login">Login</Link></li>
+      <li className="menu-item  "><Link to="/register">register</Link></li>
+    </ul>
+
+
+    )
+
+  }else{
+    AuthButtons =(
+      <ul>
+      <li className="menu-item "><Link to="/">Home</Link></li>
+      <li className="menu-item "><Link to="/listing">Listing</Link></li>
+      <li className="menu-item "><Link to="/contact">contact</Link></li>
+      <li className="menu-item "><Link to="/about">About</Link></li>
+      
+      <li className="menu-item "><Link to ="/reservation">Reservation</Link></li>
+      
+      <li className="menu-item "><Link to="/historical">Historical</Link></li>
+      <li className="menu-item "><Link to="/complaint">Complaint</Link></li>
+    
+    </ul>
+    )
+
+
+
+
+
+  }
+
+
+
+
+
+
+
 return (
         <div>
           {/* MAIN */}
@@ -42,25 +85,19 @@ return (
                     <nav id="dl-menu">
                       {/* class="dl-menu" */}
                       <ul className="main-menu dl-menu">
-                      <Link to="/">
+                      {/* <Link to="/">
                       <li className="menu-item   current-menu-parent menu-item-has-children    ">
-                      <a >Home</a>
-                        </li>
-                        </Link>
-
-                        <Link to="/listing">
-                        <li className="menu-item current-menu-parent menu-item-has-children  ">
-                        <a> Listing </a>
-                        </li>
-                         
-                        </Link>
-                       
-                        <li>
-                          <ul>
-                            <li className="menu-item "><Link to="/contact">contact</Link></li>
-                            <li className="menu-item "><Link to="/about">About</Link></li>
-                            <li className="menu-item  "><Link to="/login">Login</Link></li>
-                            <li className="menu-item  "><Link to="/register">register</Link></li>
+                      <a>Home</a>
+                      </li>
+                      </Link>
+                      <Link to="/listing">
+                      <li className="menu-item current-menu-parent menu-item-has-children  ">
+                      <a> Listing </a>
+                      </li>
+                      </Link> */}
+                      <li>
+                         <ul>
+                         {AuthButtons}
                           </ul>
                         </li>
                       </ul>
