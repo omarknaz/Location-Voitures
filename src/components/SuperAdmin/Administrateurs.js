@@ -24,6 +24,11 @@ function Administrateurs() {
                   <a> <i className="nc-icon nc-single-02" />
                     <Link to="/administrateurs">Administrateurs</Link>
                   </a>
+                  </li>
+                  <li>
+                  <a> <i className="nc-icon nc-single-02" />
+                    <Link to="/addadmins">Add Admins</Link>
+                  </a>
                    
                 </li>
             </ul>
@@ -31,6 +36,7 @@ function Administrateurs() {
           </div>
           <div className="main-panel">
             {/* Navbar */}
+           
             <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
               <div className="container-fluid">
                 <div className="navbar-wrapper">
@@ -43,6 +49,7 @@ function Administrateurs() {
                 
               </div>
             </nav>
+            
             {/* End Navbar */}
             <div className="content">
               <div className="row">
@@ -112,9 +119,14 @@ function Administrateurs() {
                           </tbody>
                           
                         </table>
+                        
                         <div className="update ml-auto mr-auto">
-                            <button className="buton" type="button"> Add Admin  </button>
+                          <Link to="/addadmins">
+                          <button className="buton" type="button"> Add Admins</button>
+                          </Link>
+                           
                           </div>
+                        
                       </div>
                     </div>
                   </div>
