@@ -8,7 +8,7 @@ function Historical() {
           {/* MAIN */}
           
           <div className="wheel-start3">
-            <img src="assets/images/bg6.jpg" alt="" className="wheel-img" />
+           
             <div className="container">
               <div className="row">
                 <div className="col-xs-12 padd-lr0">
@@ -23,13 +23,18 @@ function Historical() {
           <br />
           <br />
           <br />
-          <h2>Reservations</h2>
+         <div className="wheel-bg2">
+            <div className="container padd-lr0">
+              <div className="row">
+                <div className="col-xs-12">
+                  <div className="wheel-header text-center marg-lg-t145 marg-sm-t50 marg-lg-b90">
+                  <h3>List  Reservations</h3>
+          <br />
           <br />
           <br />
          <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col">Id</th>
                 <th scope="col">Etat</th>
                 <th scope="col">Véhicule</th>
                 <th scope="col">Date début</th>
@@ -38,7 +43,6 @@ function Historical() {
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
                 <td>En cours</td>
                 <td>MERCEDES-BENZ</td>
                 <td>12/05/2022</td>
@@ -46,51 +50,55 @@ function Historical() {
                 <button type="submit" className="btn btn-primary btn-round">Update </button>
               </tr>
               <tr>
-                <th scope="row">2</th>
+                
                 <td>Validé</td>
                 <td>Fiat 500</td>
                 <td>03/11/2021</td>
                 <td>12/11/2021</td>
-                <button className="button" type="button"> Delete</button>
+               <button id="red" className="btn btn-primary btn-round"type="submit"> Delete</button>
               </tr>
               <tr>
-                <th scope="row">3</th>
+                
                 <td>Validé</td>
                 <td>BMW</td>
                 <td>26/08/2021</td>
                 <td>31/08/2021</td>
-                <button className="button" type="button"> Delete</button>
-              </tr><tr>
-                <th scope="row">4</th>
-                <td>Validé</td>
-                <td>Golf 7</td>
-                <td>17/01/2019</td>
-                <td>01/02/2019</td>
-                <button className="button" type="button"> Delete</button>
+                <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
               </tr>
+                
             </tbody>
           </table>
-          <br />
           <button className="buton" type="button"> Add Reservation</button>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          
+          <br />
+          
           <br />
           <br />
           <br />
           <br />
           <br />
-          <h2>Complaints</h2>
-          <br />
-          <br />
+          <div className="wheel-bg2">
+            <div className="container padd-lr0">
+              <div className="row">
+                <div className="col-xs-12">
+                  <div className="wheel-header text-center marg-lg-t145 marg-sm-t50 marg-lg-b90">
+                  <h3>List  Complaints</h3>
           <table className="table table-bordered">
             <thead>
               <tr>
-                <th scope="col">Id</th>
+             
                 <th scope="col">Date</th>
                 <th scope="col">Complaint</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
+                
                 <td>22/06/2019</td>
                 <td> Objet : Demande d'indemnisation
                   Le 21/06/2019, j'ai effectué une réservation par internet auprès de votre agence pour une location du 21/06 au 25/06.
@@ -103,11 +111,11 @@ function Historical() {
                   <br />
                   <br />
                   <br />
-                  <button className="button" type="button"> Delete</button>
+                  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                 </td>
               </tr>
               <tr>
-                <th scope="row">2</th>
+              
                 <td>03/11/2020</td>
                 <td>Objet : Réclamation au sujet de la facture 
                   Madame, Monsieur,
@@ -120,12 +128,18 @@ function Historical() {
                   <br />
                   <br />
                   <br />
-                  <button className="button" type="button"> Delete</button>
+                  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                 </td>
               </tr>
             </tbody>
           </table>
           <button className="buton" type="button"> Add Complaint</button>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+        
           <br />
           <br />
           <br />

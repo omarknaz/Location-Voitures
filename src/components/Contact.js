@@ -12,22 +12,30 @@ import Navbar from "./Navbar";
           <div className="container">
             <div className="row">
               <div className="col-sm-3 col-xs-6">
+              <br></br>
+              <br></br>
                 <div className="wheel-contact-info text-center marg-lg-t150 marg-lg-b50 marg-xs-t50 marg-xs-b50">
                   <div className="wheel-contact-logo"><i className="fa fa-map-marker" /></div>
+                  
                   <h4>Address</h4>
                   <span>06 Rue de perfection Sousse, Sahloul 4011</span>
                 </div>
               </div>
+              
               <div className="col-sm-3 col-xs-6">
                 <div className="wheel-contact-info text-center marg-lg-t150 marg-lg-b50 marg-xs-t50 marg-xs-b50">
+                <br></br>
+              <br></br>
                   <div className="wheel-contact-logo"><i className="fa fa-phone" /></div>
-                  <h4>telePhone</h4>
+                  <h4>telephone</h4>
                   <a href="#"><span>73 363 562</span></a>
                   <a href="#"><span>73 654 785</span></a>
                 </div>
               </div>
               <div className="col-sm-3 col-xs-6">
                 <div className="wheel-contact-info text-center marg-lg-t150 marg-lg-b50 marg-xs-t50 marg-xs-b50">
+                <br></br>
+              <br></br>
                   <div className="wheel-contact-logo"><i className="fa fa-mobile" /></div>
                   <h4>Fax</h4>
                   <a href="#"><span>(+216)  3 8376 6284 </span></a>
@@ -35,6 +43,8 @@ import Navbar from "./Navbar";
               </div>
               <div className="col-sm-3 col-xs-6">
                 <div className="wheel-contact-info text-center marg-lg-t150 marg-lg-b50 marg-xs-t50 marg-xs-b50">
+                <br></br>
+              <br></br>
                   <div className="wheel-contact-logo"><i className="fa fa-envelope" /></div>
                   <h4>Email</h4>
                   <a href="#"><span> Wheelcar@gmail.com</span></a>

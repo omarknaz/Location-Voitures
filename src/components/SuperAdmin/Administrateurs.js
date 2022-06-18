@@ -3,9 +3,23 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from "axios";
-import swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { useNavigate } from 'react-router-dom';
 function Administrateurs() {
+
+  const navigate = useNavigate();
+  const [admin,setadmins] = useState([]);
+
+
+  const LogoutSubmit = async(e) => {
+    e.preventDefault();
+    localStorage.removeItem('token');
+    navigate('/');
+    
+
+  }
+
+
 
   // const [admin, setadmin] = useState([])
   // useEffect(()=>{
@@ -22,8 +36,7 @@ function Administrateurs() {
   // }, [])
 
 
-  const navigate = useNavigate();
-  const [admin,setadmins] = useState([]);
+
 
 
    //List admin 
@@ -61,33 +74,42 @@ function Administrateurs() {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + `${token}`
     }
-    axios.delete("http://127.0.0.1:8000/api/deleteadmin/"+id, {
-      headers: headers
-    })
-  .then(res => {
-      console.log(res.data.message)
-      swal.fire({
-        title: 'Are you sure??',
-        showDenyButton: true,
-        showCancelButton: true,
-        confirmButtonText: 'yes',
-        denyButtonText: `No`,
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          swal.fire('deleted', '', 'error')
-          window.location.reload(false);
-        } else if (result.isDenied) {
-          swal.fire('youu kept it ', '', 'success')
-        }
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete("http://127.0.0.1:8000/api/deleteadmin/"+id, {
+          headers: headers
+        })
+      .then(res => {
+          console.log(res.data.message)
+          
+      
+       
+      
+      }).catch(err => {
+        console.log(err)
       })
+      window.location.reload(false);
+
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+
    
-  
-  }).catch(err => {
-    console.log(err)
-  })
    
-  }
+}
 
 
 
@@ -135,6 +157,9 @@ function Administrateurs() {
                   </a>
                    
                 </li>
+                <li>
+                <button type='button' onClick={ LogoutSubmit} className='nav-lin btn btn-danger btn-sm text_white'>Logout</button>
+                </li>
             </ul>
             </div>
           </div>
@@ -149,6 +174,7 @@ function Administrateurs() {
                   </div>
                   <a className="navbar-brand" href="javascript:;"> List Admins</a>
                 </div>
+               
                 
                 
               </div>
@@ -190,7 +216,7 @@ function Administrateurs() {
                              &nbsp; &nbsp; &nbsp; 
                             <button type="submit" className="btn btn-primary btn-round">Update </button>
                             &nbsp; &nbsp; &nbsp; 
-                            <button className="button" type="button" onClick={()=>deleteOperation(admins.id)} > Delete</button>
+                            <button id="red" className="btn btn-primary btn-round" type="button" onClick={()=>deleteOperation(admins.id)} > Delete</button>
                             &nbsp; &nbsp; &nbsp; 
                         
                            </tr>
@@ -198,6 +224,8 @@ function Administrateurs() {
                            
                           ))}
                             
+                            
+                           
                           </tbody>
                           
                         </table>

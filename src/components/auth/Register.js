@@ -130,27 +130,29 @@ function Register(){
                  
                   {/* //////////////////////////////// */}
                   <div className="">
-                    <img src="assets/images/bg7.jpg" alt="" className="wheel-img" />
-                    <div className="container">
-                      {/* <div className="row">
-                        <div className="col-xs-12 padd-lr0">
-                          <div className="wheel-start3-body clearfix marg-lg-t255 marg-lg-b2 marg-sm-t190 marg-xs-b30">
-                            <h3>Register</h3>
-                            <ol className="breadcrumb">
-                              <li><a>Home</a></li>
-                              <li className="active">Register</li>
-                            </ol>
-                          </div>
-                        </div>
-                      </div> */}
-                    </div>
+          <div className="wheel-start3">
+            <div className="container">
+               <div className="row">
+                <div  className="col-xs-12 padd-lr0">
+                  <div className="wheel-start3-body clearfix marg-lg-t255 marg-lg-b75 marg-sm-t190 marg-xs-b30">
+                    <h3>Register</h3>
+                    <ol className="breadcrumb">
+                      <li><a>Home</a></li>
+                      <li className="active">Register</li>
+                    </ol>
                   </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+          </div>
                   {/* /////////////////////////////////// */}
                   <div className="wheel-register-block">
                     <div className="container">
                       <div className="row">
-                        <div className="col-md-7 padd-r0">
-                          <div className="wheel-register-sign marg-lg-t150 marg-lg-b150 marg-sm-t100 marg-sm-b100">
+                        <div id="reg" className="col-md-7 padd-r0">
+                        <div className="wheel-register-log marg-lg-t150 marg-lg-b150 marg-sm-t100 marg-sm-b100">
+                          
                             <div className="wheel-header">
                               <h5>Sign up Now </h5>
                               <h3>Get <span>Registered</span></h3>
@@ -171,6 +173,7 @@ function Register(){
                             </form>
                           </div>
                         </div>
+                        
                       </div>
                     </div>
                   </div>

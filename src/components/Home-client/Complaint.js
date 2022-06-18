@@ -46,7 +46,7 @@ import { useNavigate } from "react-router-dom";
           {/* MAIN */}
          
           <div className="wheel-start3">
-            <img src="assets/images/bg6.jpg" alt="" className="wheel-img" />
+            
             <div className="container">
               <div className="row">
                 <div className="col-xs-12 padd-lr0">
@@ -61,7 +61,7 @@ import { useNavigate } from "react-router-dom";
               </div>
             </div>
           </div>
-          <section className="wheel-reply-form wheel-bg1 marg-lg-b145 marg-sm-b50">
+          <section id="rec" className="wheel-reply-form wheel-bg1 marg-lg-b145 marg-sm-b50">
             <header>
               <h3>Leave a Complaint</h3>
             </header>

@@ -20,6 +20,7 @@ import Navbar from './components/Navbar';
 import Clients from './components/admin/Clients';
 import Administrateurs from './components/SuperAdmin/Administrateurs';
 import AddAdmins from './components/SuperAdmin/AddAdmins';
+import AddVehicles from './components/admin/AddVehicles';
 
 
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/clients"   element={<Clients/>} />
         <Route path="/superadministrateurs"   element={<Administrateurs/>} />
         <Route path="/addadmins"   element={<AddAdmins/>} />
+        <Route path="/addvehicles"   element={<AddVehicles/>} />
         
          
       </Routes>

@@ -65,20 +65,19 @@ function Reclamation() {
                   <div className="navbar-toggle">
                     
                   </div>
-                  <a className="navbar-brand" href="javascript:;">Réclamations</a>
+                  <h3>List  Complaints</h3>
                 </div>
                 
                 
               </div>
             </nav>
             {/* End Navbar */}
-            <div className="content">
+            <div className="wheel-bg2">
+            <div className="container padd-lr0">
               <div className="row">
-                <div className="col-md-12">
-                </div>
-              </div>
-            </div>
-            <table className="table table-bordered">
+                <div className="col-xs-12">
+                  <div className="wheel-header text-center marg-lg-t145 marg-sm-t50 marg-lg-b90">
+                  <table className="table table-bordered">
               <thead>
                 <tr>
                   <th scope="col">Id</th>
@@ -109,7 +108,7 @@ function Reclamation() {
                     <br />
                     <br />
                     <br />
-                    <button className="button" type="button"> Delete</button>
+                    <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                   </td>
                 </tr>
                 <tr>
@@ -132,13 +131,19 @@ function Reclamation() {
                     <br />
                     <br />
                     <br />
-                    <button className="button" type="button"> Delete</button>
+                    <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
       );
     }
   export default Reclamation
