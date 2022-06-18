@@ -13,8 +13,8 @@ function AddVehicles() {
                               <input type="text" placeholder="Model" />
                               <input type="text" placeholder="Registration number"  />
                               <input type="Email" placeholder="Mileage" />
-                              {/* <input type="text" placeholder="Username"   />
-                              <input type="text" placeholder="CIN"  /> */}
+                             
+                                <label > Date mise en circulation</label>
                               <input type="date" placeholder="Date mise en circulation"  />
                               <input type="file"  accept="image/png, image/jpeg"  />
 
