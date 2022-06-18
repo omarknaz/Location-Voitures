@@ -17,7 +17,7 @@ function AddVehicles() {
                               <label > Mileage</label>
                               <input type="Email"/>
                              
-                                <label > Date mise en circulation</label>
+                                <label > Date of entry into service of the car</label>
                               <input type="date" placeholder="Date mise en circulation"  />
                               <label > Car picture</label>
                               <input type="file"  accept="image/png, image/jpeg"  />
