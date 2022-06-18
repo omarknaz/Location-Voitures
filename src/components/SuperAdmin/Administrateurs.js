@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from "axios";
-import swal from "sweetalert";
+import swal from "sweetalert2";
+import { useNavigate } from 'react-router-dom';
 function Administrateurs() {
 
   // const [admin, setadmin] = useState([])
@@ -21,7 +22,7 @@ function Administrateurs() {
   // }, [])
 
 
-  
+  const navigate = useNavigate();
   const [admin,setadmins] = useState([]);
 
 
@@ -51,7 +52,7 @@ function Administrateurs() {
     return() => {isMounted =false
     };
 
-  });
+  },[navigate]);
  
 
   function deleteOperation(id){
