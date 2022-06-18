@@ -24,6 +24,7 @@ import AddVehicles from './components/admin/AddVehicles';
 import UpdateReservation from './components/admin/UpdateReservation';
 import RéparVoiture from './components/admin/RéparVoiture';
 import UpdateVehicle from './components/admin/UpdateVehicule';
+import UpdateAdmin from './components/SuperAdmin/UpdateAdmin';
 
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         <Route path="/updatereservation"   element={<UpdateReservation/>} />
         <Route path="/reparation"   element={<RéparVoiture/>} />
         <Route path="/updatevehicle"   element={<UpdateVehicle/>} />
+        <Route path="/updateadmin"   element={<UpdateAdmin/>} />
         
          
       </Routes>

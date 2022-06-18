@@ -214,7 +214,12 @@ function Administrateurs() {
                              <p>{admins.email}</p>
                              </td>
                              &nbsp; &nbsp; &nbsp; 
-                            <button type="submit" className="btn btn-primary btn-round">Update </button>
+                             <Link to="/updateadmin">
+                             <button type="submit" className="btn btn-primary btn-round">Update </button>
+                             </Link>
+                             <Link to="/updateadmin">
+                             <button type="submit" className="btn btn-primary btn-round">Update </button>
+                             </Link>
                             &nbsp; &nbsp; &nbsp; 
                             <button id="red" className="btn btn-primary btn-round" type="button" onClick={()=>deleteOperation(admins.id)} > Delete</button>
                             &nbsp; &nbsp; &nbsp; 

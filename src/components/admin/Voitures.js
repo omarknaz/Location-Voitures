@@ -97,9 +97,7 @@ function Voiture() {
                               <th>
                                 Matricule
                               </th>
-                              <th>
-                                Model
-                              </th>
+                              
                               <th className="text-right">
                                 Kilométrage
                               </th>
@@ -115,9 +113,7 @@ function Voiture() {
                               <td>
                                 112TUN58960
                               </td>
-                              <td>
-                                MERCEDES-BENZ
-                              </td>
+                              
                               <td className="text-right">
                                 80000km
                               </td>
@@ -137,9 +133,7 @@ function Voiture() {
                               <td>
                                 170TUN7520
                               </td>
-                              <td>
-                                BMW
-                              </td>
+                              
                               <td className="text-right">
                                 859000Km
                               </td>
@@ -159,9 +153,7 @@ function Voiture() {
                               <td>
                                 140TUN14563
                               </td>
-                              <td>
-                                Golf 7
-                              </td>
+                             
                               <td className="text-right">
                                 2500Km
                               </td>
