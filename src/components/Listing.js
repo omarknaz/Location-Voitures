@@ -10,7 +10,7 @@ function Listing () {
               
               {/* //////////////////////////////// */}
               <div className="wheel-start3">
-                <img src="assets/images/bg7.jpg" alt="" className="wheel-img" />
+                
                 <div className="container">
                   <div className="row">
                     <div className="col-xs-12 padd-lr0">

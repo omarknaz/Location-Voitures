@@ -11,7 +11,7 @@ import Navbar from "./Navbar";
           
           {/* //////////////////////////////// */}
           <div className="wheel-start3">
-            <img src="assets/images/bg7.jpg" alt="" className="wheel-img" />
+
             <div className="container">
               <div className="row">
                 <div className="col-xs-12 padd-lr0">
@@ -48,7 +48,7 @@ import Navbar from "./Navbar";
                   </div>
                 </div>
               </div>
-              <div className="row">
+              <div>
                 <div className="col-xs-12 padd-lr0  marg-lg-b150  marg-md-b50">
                   <div className="wheel-testimonial-item">
                     <i className="fa fa-users" />
@@ -74,12 +74,16 @@ import Navbar from "./Navbar";
               </div>
             </div>
           </div>
-          <div className="col-md-6 padd-lr0">
+        
+         
+          <div id="col" className="col-md-6 padd-lr0"> 
             <div className="wheel-skills-accordion marg-lg-t150 marg-lg-b135 marg-sm-t50 marg-sm-b50">
               <div className="wpc-accordion">
                 <div className="panel-wrap active">
+
                   <h5 className="panel-title">We Stand Together <span /></h5>
                   <div className="panel-content">
+                    
                     WHEELCAR is a human and family company, in this sense we support a lot of charity associations, we are partners of some sports teams to prove our dedication in several Tunisian regions.
                   </div>
                 </div>
@@ -98,11 +102,12 @@ import Navbar from "./Navbar";
               </div>
             </div>
           </div>
+                  
           <div className="wheel-bg2">
             <div className="container padd-lr0">
               <div className="row">
-                <div className="col-xs-12">
-                  <div className="wheel-header text-center marg-lg-t145 marg-sm-t50 marg-lg-b90">
+               <div className="col-xs-12">
+                  <div className="wheel-header text-center marg-lg- t145 marg-sm-t50 marg-lg-b90">
                     <h5>Memebers </h5>
                     <h3>Our Excellent <span>Team</span></h3>
                   </div>

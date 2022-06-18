@@ -126,7 +126,7 @@ function Voiture() {
                               </td>
                               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <button type="submit" className="btn btn-primary btn-round">Update </button>
-                        &nbsp; &nbsp; &nbsp; <button className="button" type="button"> Delete</button>
+                        &nbsp; &nbsp; &nbsp; <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                             <tr>
                               <td>
@@ -146,7 +146,7 @@ function Voiture() {
                               </td>
                               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <button type="submit" className="btn btn-primary btn-round">Update </button>
-                        &nbsp; &nbsp; &nbsp;  <button className="button" type="button"> Delete</button>
+                        &nbsp; &nbsp; &nbsp;  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                             <tr>
                               <td>
@@ -166,7 +166,7 @@ function Voiture() {
                               </td>
                               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <button type="submit" className="btn btn-primary btn-round">Update </button> 
-                        &nbsp; &nbsp; &nbsp;  <button className="button" type="button"> Delete</button>
+                        &nbsp; &nbsp; &nbsp;  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                           </tbody>
                         </table>

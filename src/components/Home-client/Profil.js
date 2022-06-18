@@ -18,19 +18,7 @@ function Profil() {
                       <div className="top-menu-item"><a href="#"><i className="fa fa-phone" /><span> 73 363 562</span></a></div>
                       <div className="top-menu-item"><a href="#"><i className="fa fa-envelope" /><span>Wheelcar@gmail.com</span></a></div>
                     </div>
-                    <div className="wheel-top-menu-log">
-                      <div className="top-menu-item">
-                        <div className="dropdown wheel-user-ico">
-                          <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Account
-                            <span className="caret" />
-                          </button>
-                          <ul className="dropdown-menu">
-                            <li><a routerlink="/login">LogOut</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                   
                   </div>
                 </div>
                 <div className="col-sm-9 ">
@@ -62,7 +50,7 @@ function Profil() {
             </div>
           </div>
           <div className="wheel-start3">
-            <img src="assets/images/bg7.jpg" alt="" className="wheel-img" />
+           
             <div className="container">
               <div className="row">
                 <div className="col-xs-12 padd-lr0">
@@ -77,11 +65,11 @@ function Profil() {
           <br />
           <br />
           <br />
-          <div className="col-md-8">
-            <div className="card card-user">
-              <div className="card-header">
-              </div>
-              <div className="card-body">
+          <div className="wheel-bg2"  >
+            <div className="container padd-lr0"  id="form">
+              <div className="row">
+                <div  className="col-xs-12" >
+                  <div className="wheel-header text-center marg-lg-t145 marg-sm-t50 marg-lg-b90" >
                 <form>
                   <div className="row">
                     <div className="col-md-3 px-1">
@@ -148,7 +136,11 @@ function Profil() {
                   </div>
                 </form>
               </div>
-            </div></div></div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
       );
     }
 export default Profil

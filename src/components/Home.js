@@ -11,7 +11,7 @@ function Home(){
           
           {/* ////////////////////////////////////////// */}
           <div className="wheel-start wheel-start2">
-            <img src="" alt="" className="wheel-img" />
+        
             <div className="container padd-lr0">
               <div className="col-lg-12">
                 <header className="wheel-header text-center marg-lg-t80 ">
@@ -19,8 +19,12 @@ function Home(){
                   <br></br>
                   <br></br>
                   <br></br>
+                  &nbsp;
+            &nbsp;
+            &nbsp;
                   <h1>Search - Hire - Compare - Save</h1>
                   <h5>We Help you to Rent your DREAM CAR</h5>
+                  
                 </header>
               </div>
             </div>
@@ -118,7 +122,7 @@ function Home(){
                     <h3>We Love Our <span>Customers</span></h3>
                   </div>
                   <p>WHEELCAR Tunisia is a Tunisian family car rental company since June 2022 with a capital of one hundred thousand dinars (100,000,000 DT), the head office is located in Sousse </p>
-                  <a className="wheel-btn">Learn More</a>
+                  
                 </div>
               </div>
             </div>
