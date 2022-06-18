@@ -10,12 +10,16 @@ function AddVehicles() {
                               
                             </div>
                             <form >
-                              <input type="text" placeholder="Model" />
-                              <input type="text" placeholder="Registration number"  />
-                              <input type="Email" placeholder="Mileage" />
+                            <label > Model</label>
+                              <input type="text"  />
+                              <label > Registration number</label>
+                              <input type="text" />
+                              <label > Mileage</label>
+                              <input type="Email"/>
                              
                                 <label > Date mise en circulation</label>
                               <input type="date" placeholder="Date mise en circulation"  />
+                              <label > Car picture</label>
                               <input type="file"  accept="image/png, image/jpeg"  />
 
                             

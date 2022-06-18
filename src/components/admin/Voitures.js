@@ -173,7 +173,7 @@ function Voiture() {
                         <div className="row">
                           <div className="update ml-auto mr-auto">
                             <Link to="/addvehicles">
-                              
+                            <button className="buton" type="button"> Add Vehicles</button>
                             </Link>
                             
                           </div>
