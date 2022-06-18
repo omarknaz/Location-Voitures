@@ -11,7 +11,6 @@ function Clients() {
                   <img src="assets/images/logo-small.png" />
                 </div>
                 <p>CT</p> 
-              
             </a>
             <a  className="simple-text logo-normal">
                 WheelCar Backoffice

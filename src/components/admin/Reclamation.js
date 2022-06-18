@@ -8,7 +8,7 @@ function Reclamation() {
             <div className="logo">
               <a className="simple-text logo-mini">
                 <div className="logo-image-small">
-                  <img src="/assets/img/logo-small.png" />
+                <img src="assets/images/logo-small.png" />
                 </div> 
                 <p />
               </a>

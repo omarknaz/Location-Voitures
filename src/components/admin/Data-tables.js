@@ -30,7 +30,7 @@ function DataTables() {
                    
                   
                 </li>
-                  
+
 
                 
                 <li>
@@ -84,7 +84,7 @@ function DataTables() {
                         <table className="table">
                           <thead className=" text-primary">
                             <tr><th>
-                                Name
+                                Nom
                               </th>
                               <th>
                                 Email
@@ -117,9 +117,12 @@ function DataTables() {
                                 20/02/2021
                               </td>
                               &nbsp; &nbsp; &nbsp; 
-                        <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              <Link to="/updatereservation">
+                              <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
+                        
                         &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
+                        <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                         &nbsp; &nbsp; &nbsp; 
                             </tr>
                             <tr>
@@ -139,9 +142,11 @@ function DataTables() {
                                 08/11/2022
                               </td>
                               &nbsp; &nbsp; &nbsp; 
+                              <Link to="/updatereservation">
                               <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                         &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
+                        <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                         &nbsp; &nbsp; &nbsp; 
                             </tr>
                             <tr>
@@ -161,9 +166,11 @@ function DataTables() {
                                 03/05/2022
                               </td>
                               &nbsp; &nbsp; &nbsp; 
+                              <Link to="/updatereservation">
                               <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                         &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
+                        <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                           </tbody>
                         </table>
@@ -219,7 +226,9 @@ function DataTables() {
                               <td>
                                 Aucun
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                <button type="submit" className="btn btn-primary btn-round">Update </button>
+                                <Link to="/reparation">
+                              <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                               </td>
                             </tr>
                             <tr>
@@ -243,7 +252,9 @@ function DataTables() {
                                 /
                                 Crémaillère changé
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                <button type="submit" className="btn btn-primary btn-round">Update </button>
+                                <Link to="/reparation">
+                              <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                               </td>
                             </tr>
                             <tr>
@@ -264,8 +275,10 @@ function DataTables() {
                               </td>
                               <td>
                                 Batterie changé
-                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
-                                <button type="submit" className="btn btn-primary btn-round">Update </button>
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                                <Link to="/reparation">
+                              <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                               </td>
                             </tr>
                           </tbody>

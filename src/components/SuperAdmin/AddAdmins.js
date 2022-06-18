@@ -15,7 +15,7 @@ function AddAdmins() {
 
   const [name, setname] = useState("");
   const [password, setpassword] = useState("");
-  
+    
   const [lastname, setlastname] = useState("");
  
   const [adresse, setadresse] = useState("");

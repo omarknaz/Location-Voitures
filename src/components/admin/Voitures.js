@@ -38,7 +38,7 @@ function Voiture() {
 
                 <li >
                   <a> <i className="nc-icon nc-bell-55" />
-                  <Link to="/admin">Dashboard</Link></a>
+                  <Link to="/reclamation">Complaints</Link></a>
                     
                  
                    
@@ -53,7 +53,7 @@ function Voiture() {
                 <li className="active ">
               <a>
                 <i className="nc-icon nc-single-02" />
-                    <Link to="/voitures">Voitures</Link>
+                    <Link to="/voitures" >Voitures</Link>
                   </a>
                 </li>
               </ul>
@@ -125,7 +125,9 @@ function Voiture() {
                                 20/02/2021
                               </td>
                               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              <Link to="/updatevehicle">
+                              <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                         &nbsp; &nbsp; &nbsp; <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                             <tr>
@@ -145,7 +147,9 @@ function Voiture() {
                                 08/11/2022
                               </td>
                               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              <Link to="/updatevehicle">
+                              <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                         &nbsp; &nbsp; &nbsp;  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                             <tr>
@@ -165,7 +169,9 @@ function Voiture() {
                                 03/05/2022
                               </td>
                               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <button type="submit" className="btn btn-primary btn-round">Update </button> 
+                              <Link to="/updatevehicle">
+                              <button type="submit" className="btn btn-primary btn-round">Update </button>
+                              </Link>
                         &nbsp; &nbsp; &nbsp;  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                           </tbody>

@@ -12,7 +12,7 @@ function Admin() {
                 </div>
                 {/* <p>CT</p> */}
                 </a>
-                <a href="https://www.creative-tim.com" className="simple-text logo-normal">
+                <a  className="simple-text logo-normal">
                 WheelCar Backoffice
                 </a>
             </div>

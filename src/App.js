@@ -21,7 +21,9 @@ import Clients from './components/admin/Clients';
 import Administrateurs from './components/SuperAdmin/Administrateurs';
 import AddAdmins from './components/SuperAdmin/AddAdmins';
 import AddVehicles from './components/admin/AddVehicles';
-
+import UpdateReservation from './components/admin/UpdateReservation';
+import RéparVoiture from './components/admin/RéparVoiture';
+import UpdateVehicle from './components/admin/UpdateVehicule';
 
 
 function App() {
@@ -49,6 +51,9 @@ function App() {
         <Route path="/superadministrateurs"   element={<Administrateurs/>} />
         <Route path="/addadmins"   element={<AddAdmins/>} />
         <Route path="/addvehicles"   element={<AddVehicles/>} />
+        <Route path="/updatereservation"   element={<UpdateReservation/>} />
+        <Route path="/reparation"   element={<RéparVoiture/>} />
+        <Route path="/updatevehicle"   element={<UpdateVehicle/>} />
         
          
       </Routes>
