@@ -172,7 +172,10 @@ function Voiture() {
                         </table>
                         <div className="row">
                           <div className="update ml-auto mr-auto">
-                            <button className="buton" type="button"> Add Vehicles</button>
+                            <Link to="/addvehicles">
+                              
+                            </Link>
+                            
                           </div>
                         </div>
                       </div>

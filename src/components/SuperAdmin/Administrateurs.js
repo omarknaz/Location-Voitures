@@ -85,7 +85,7 @@ function Administrateurs() {
                               &nbsp; &nbsp; &nbsp; 
                         <button type="submit" className="btn btn-primary btn-round">Update </button>
                         &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
+                        <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                         &nbsp; &nbsp; &nbsp; 
                             </tr>
                             <tr>
@@ -99,7 +99,7 @@ function Administrateurs() {
                               &nbsp; &nbsp; &nbsp; 
                               <button type="submit" className="btn btn-primary btn-round">Update </button>
                         &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
+                        <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                         &nbsp; &nbsp; &nbsp; 
                             </tr>
                             <tr>
@@ -113,7 +113,7 @@ function Administrateurs() {
                               &nbsp; &nbsp; &nbsp; 
                               <button type="submit" className="btn btn-primary btn-round">Update </button>
                         &nbsp; &nbsp; &nbsp; 
-                        <button className="button" type="button"> Delete</button>
+                        <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                             </tr>
                             
                           </tbody>

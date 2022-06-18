@@ -65,7 +65,7 @@ function Reclamation() {
                   <div className="navbar-toggle">
                     
                   </div>
-                  <a className="navbar-brand" href="javascript:;">Réclamations</a>
+                  <h3>List  Complaints</h3>
                 </div>
                 
                 
@@ -77,7 +77,7 @@ function Reclamation() {
               <div className="row">
                 <div className="col-xs-12">
                   <div className="wheel-header text-center marg-lg-t145 marg-sm-t50 marg-lg-b90">
-            <table className="table table-bordered">
+                  <table className="table table-bordered">
               <thead>
                 <tr>
                   <th scope="col">Id</th>
