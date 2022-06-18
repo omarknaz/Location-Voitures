@@ -158,14 +158,14 @@ function Register(){
                               <h3>Get <span>Registered</span></h3>
                             </div>
                             <form onSubmit={e => e.preventDefault()}>
-                              <input type="text" placeholder="First Name" value={name} onChange={handlename}/>
-                              <input type="text" placeholder="Last Name" value={lastname} onChange={handlelastname} />
-                              <input type="Email" placeholder="Email" value={email} onChange={handleemail}/>
+                              <input type="text" placeholder="First Name" value={name} onChange={handlename} required/>
+                              <input type="text" placeholder="Last Name" value={lastname} onChange={handlelastname} required/>
+                              <input type="Email" placeholder="Email" value={email} onChange={handleemail}required/>
                               {/* <input type="text" placeholder="Username"   />
                               <input type="text" placeholder="CIN"  /> */}
-                              <input type="text" placeholder="Phone" value={tel} onChange={handletelephone} />
-                              <input type="text" placeholder="Adresse" value={adresse} onChange={handleadresse}/>
-                              <input type="password" placeholder="Password" value={password} onChange={handlepassword} />
+                              <input type="text" placeholder="Phone" value={tel} onChange={handletelephone} required/>
+                              <input type="text" placeholder="Adresse" value={adresse} onChange={handleadresse}required/>
+                              <input type="password" placeholder="Password" value={password} onChange={handlepassword} required/>
                               
                               <label htmlFor="input-val1">
                               </label>

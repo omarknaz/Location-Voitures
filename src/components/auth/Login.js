@@ -67,7 +67,7 @@ function Login(){
                       
                       <div className="form-group">
                         <label htmlFor="userName" className="fa fa-user" />
-                        <input  placeholder=" Email" onChange={handleEmail} type="email"/>
+                        <input  placeholder=" Email" onChange={handleEmail} type="email" required/>
                       </div>
                       <div className="form-group">
                         <label htmlFor="userPass" className="fa fa-lock" />
