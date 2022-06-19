@@ -33,6 +33,7 @@ import Navbar from "./Navbar";
                 <div className="col-xs-12">
                   <div className="wheel-header wheel-testi-header text-center marg-lg-t155 marg-lg-b65 marg-md-t50  marg-md-b50">
                     <h3>Our Mission is <span>Client’s</span> Satisfaction</h3>
+                    
                   </div>
                 </div>
               </div>
@@ -195,6 +196,7 @@ import Navbar from "./Navbar";
             </div>
           </div>
         </div>
+        
         </>
       );
     }

@@ -40,23 +40,23 @@ function AddVehicles() {
 
 
 <div className="wheel-register-block">
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-md-7 padd-r0">
-                          <div className="wheel-register-sign marg-lg-t150 marg-lg-b150 marg-sm-t100 marg-sm-b100">
-                            <div className="wheel-header">
+            <div className="container">
+              <div className="row">
+                <div id="log" className="col-md-8 padd-l0">
+                  <div id="ajout" className="wheel-register-log marg-lg-t150 marg-lg-b150 marg-sm-t100 marg-sm-b100">
+                    <div className="wheel-header">
                               
                             </div>
                             <form   onSubmit={handleSubmit}>
                             
-                              <label > Registration number</label>
-                              <input type="text" value={Matricule}  onChange={(e)=> setMatricule(e.target.value) }/>
-                              <label > Mileage</label>
-                              <input type="text" value={Kilometrage} onChange={(e)=> setKilometrage(e.target.value) }  />
                              
-                                <label > Date of entry into service of the car</label>
+                              <input type="text" value={Matricule} placeholder="Registration Number"  onChange={(e)=> setMatricule(e.target.value) }/>
+                             
+                              <input type="text" value={Kilometrage} placeholder="Mileage" onChange={(e)=> setKilometrage(e.target.value) }  />
+                             
+                                
                               <input type="date" placeholder="Date mise en circulation"  value={DateMiseEnCirculation} onChange={(e)=> setDateMiseEnCirculation(e.target.value) } />
-                              <label > Car picture</label>
+                              
                               <input type="file"  accept="image/*"  onChange={(e)=>   setVehiculePic(e.target.file)}  />
 
                               {/*<input type="file"  accept="image/*" callbackFunction={(file_arr) => {setVehiculePic(file_arr[0])}}  />*/}
@@ -64,7 +64,7 @@ function AddVehicles() {
                               
                               <label htmlFor="input-val1">
                               </label>
-                              <button className="buton" type="submit"> Add Vehicles</button>
+                              <button id="azer" className="buton" type="submit"> Add Vehicles</button>
                             </form>
                           </div>
                         </div>

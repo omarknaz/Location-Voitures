@@ -170,9 +170,52 @@ function Voiture() {
                         </table>
                         <div className="row">
                           <div className="update ml-auto mr-auto">
-                            <Link to="/addvehicles">
-                            <button className="buton" type="button"> Add Vehicles</button>
-                            </Link>
+                          <button type="submit"  className="buton" data-toggle="modal" data-target="#exampleModalCenter">
+                                Add Vehicle 
+                                </button>
+                                 {/* Modal */}
+                  <div className="modal fade" id="exampleModalCenter" tabIndex={-1} role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered" role="document">
+                   
+                          <div className="modal-body">
+                        <div className="wheel-register-block">
+                    <div className="container">
+                      <div className="row">
+                        <div id="reg" className="col-md-7 padd-r0">
+                        <div id="add" className="wheel-register-log marg-lg-t150 marg-lg-b150 marg-sm-t100 marg-sm-b100">
+                        <div className="modal-header">
+                          <h5 id="update" className="modal-title" >Update Vehicle</h5>
+                          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                        
+                      
+                          
+                            <div className="wheel-header">
+                              <h5>Add Vehcile </h5>
+
+                            </div>
+                            <form>
+                              <input type="text" placeholder=" Registration number" required/>
+                              <input type="text" placeholder="Mileage"required/>
+                             
+                              <input type="date" placeholder="Date of entry into service of the car"  required/>
+                             
+                              <input type="file" placeholder="Car picture" accept="image/*"   required/>
+                            
+                              <button className="wheel-btn" >Save Changes</button>
+                            </form>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
                             
                           </div>
                         </div>

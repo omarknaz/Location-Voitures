@@ -22,6 +22,7 @@ function Home(){
                   &nbsp;
             &nbsp;
             &nbsp;
+            
                   <h1>Search - Hire - Compare - Save</h1>
                   <h5>We Help you to Rent your DREAM CAR</h5>
                   

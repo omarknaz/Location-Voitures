@@ -64,20 +64,19 @@ return (
                       <div className="top-menu-item"><a href="#"><i className="fa fa-phone" /><span> 73 363 562</span></a></div>
                       <div className="top-menu-item"><a href="#"><i className="fa fa-envelope" /><span>Wheelcar@gmail.com</span></a></div>
                     </div>
-                    <div className="wheel-top-menu-log">
-                      <div className="top-menu-item">
-                        <div className="dropdown wheel-user-ico">
-                          <button className="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Account
-                            <span className="caret" />
-                          </button>
-                          <ul className="dropdown-menu">
-                            <li><a>Login</a></li>
-                            <li><Link to="/register">Register</Link></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
+                    <div class="wheel-top-menu-log">
+                   <div class="top-menu-item"></div>
+                    <div class="dropdown wheel-user-ico">
+                                        <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Account
+                                        <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a routerLink="/login">Login</a></li>
+                                            <li ><a routerLink="/register">Register</a></li>
+                                        </ul>
+                                    </div>
+                                    </div>
                   </div>
                 </div>
                 <div className="col-sm-9 ">
