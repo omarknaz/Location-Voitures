@@ -1,56 +1,13 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-function Voiture() {
+import Sidebar from "./layouts/sidebar";
+function CarsList() {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
- 
-      <div className="wrapper ">
-        <div className="sidebar" data-color="white" data-active-color="danger">
-          <div className="logo">
-            <a className="simple-text logo-mini">
-              <div className="logo-image-small">
-                <img src="../assets/images/logo-small.png" />
-              </div>
-              {/* <p>CT</p> */}
-            </a>
-            <a className="simple-text logo-normal">
-              WheelCar Backoffice
-              <div className="logo-image-big">
-              </div>
-            </a>
-          </div>
-          <div className="sidebar-wrapper">
-            <ul className="nav">
-              <li>
-                <a><i className="nc-icon nc-bank" />
 
-                  <Link to="/admin">Dashboard</Link></a>
-              </li>
-
-              <li>
-                <a> <i className="nc-icon nc-bell-55" />
-
-                  <Link to="/reclamation">Complaints</Link></a>
-              </li>
-              <li>
-                <a><i className="nc-icon nc-single-02" />
-
-                  <Link to="/clients">Clients</Link>
-                </a>
-              </li>
-              <li className="active ">
-                <a>
-                  <i className="nc-icon nc-single-02" />
-
-                  <Link to="/voitures" >Voitures</Link>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      
+    <div className="wrapper ">
+      <Sidebar />
       <div className="main-panel">
-
-        {/* End Navbar */}
         <div className="content">
           <div className="row">
             <div className="col-md-12">
@@ -100,7 +57,7 @@ function Voiture() {
                             20/02/2021
                           </td>
                           <td>
-                            <button type="submit" className="btn btn-primary btn-round">Update </button>
+                            <button type="button" className="btn btn-primary" onClick={() => { setModalOpen(true); }} >Update </button>
                             <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                           </td>
                         </tr>
@@ -119,7 +76,7 @@ function Voiture() {
                             08/11/2022
                           </td>
                           <td>
-                            <button type="submit" className="btn btn-primary btn-round">Update </button>
+                            <button type="button" className="btn btn-primary" onClick={() => { setModalOpen(true); }} >Update </button>
                             <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                           </td>
                         </tr>
@@ -138,7 +95,7 @@ function Voiture() {
                             03/05/2022
                           </td>
                           <td>
-                            <button type="submit" className="btn btn-primary btn-round">Update </button>
+                            <button type="button" className="btn btn-primary" onClick={() => { setModalOpen(true); }} >Update </button>
                             <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
                           </td>
                         </tr>
@@ -152,10 +109,35 @@ function Voiture() {
           </div>
         </div>
       </div>
+
+      { modalOpen && 
+      <div className="modalBackground" onClick={() => { 
+            
+            setModalOpen(false); 
+            }}>
+            <div className="modalContainer" onClick={e => { e.stopPropagation(); }}>
+            <div className="body">
+            <form >
+                <div className="inputs">
+                    <input type="text" name="Matricule" placeholder="Matricule" className='form-control'/>
+                </div>
+                <div className="inputs">
+                    <input type="text" name="Kilométrage" placeholder="Kilométrage"className='form-control' />
+
+                </div>
+                <div className="inputs">
+                    <input name="Date_circulation" placeholder="Date mise en circulation" type="text" className='form-control'/>
+                </div>
+                <button type="submit" className="sign-up-butt">Update</button>
+            </form>
+              </div>
+            </div>
       </div>
+} 
+    </div>
 
 
 
   );
 }
-export default Voiture
+export default CarsList

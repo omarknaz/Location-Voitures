@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Sidebar from "../layouts/sidebar";
-function Admin() {
+import Sidebar from "./layouts/sidebar";
+function Dashboard() {
   return (
 
     <div className="wrapper ">
@@ -198,4 +198,4 @@ function Admin() {
     </div>
   );
 }
-export default Admin
+export default Dashboard

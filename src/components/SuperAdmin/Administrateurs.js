@@ -16,7 +16,6 @@ function Administrateurs() {
     localStorage.removeItem('token');
     navigate('/');
     
-
   }
 
 
