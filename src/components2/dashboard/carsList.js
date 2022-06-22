@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Sidebar from "./layouts/sidebar";
 function CarsList() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [CreatemodalOpen, setCreateModalOpen] = useState(false);
+
   return (
 
     <div className="wrapper ">
@@ -14,6 +16,8 @@ function CarsList() {
               <div className="card">
                 <div className="card-header">
                   <h4 className="card-title"> Les Voitures</h4>
+                  <button type="button" className="btn btn-primary btn-round"  onClick={() => { setCreateModalOpen(true); }}>Ajouter voiture </button>
+
                 </div>
                 <div className="card-body">
                   <div className="table-responsive">
@@ -129,6 +133,35 @@ function CarsList() {
                     <input name="Date_circulation" placeholder="Date mise en circulation" type="text" className='form-control'/>
                 </div>
                 <button type="submit" className="sign-up-butt">Update</button>
+            </form>
+              </div>
+            </div>
+      </div>
+} 
+
+{ CreatemodalOpen && 
+      <div className="modalBackground" onClick={() => { 
+            
+            setCreateModalOpen(false); 
+            }}>
+            <div className="modalContainer" onClick={e => { e.stopPropagation(); }}>
+            <div className="body">
+            <form >
+                <div className="inputs">
+                    <input type="text" name="Matricule" placeholder="Matricule" className='form-control'/>
+                </div>
+                <div className="inputs">
+                    <input type="text" name="Kilométrage" placeholder="Kilométrage"className='form-control' />
+
+                </div>
+                <div className="inputs">
+                    <input name="Date_circulation" placeholder="Date mise en circulation" type="text" className='form-control'/>
+                </div>
+
+                <div className="inputs">
+                    <input name="Image" placeholder="Date mise en circulation" type="file" className='form-control'/>
+                </div>
+                <button type="submit" className="sign-up-butt">Create</button>
             </form>
               </div>
             </div>

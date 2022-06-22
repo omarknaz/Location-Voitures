@@ -18,9 +18,6 @@ function ClientList() {
                     <div className="card-body">
                       <div className="table-responsive">
                         
-                        
-                       
-                       
                       </div>
                     </div>
                   </div>
