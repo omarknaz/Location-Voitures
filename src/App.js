@@ -25,6 +25,8 @@ import UpdateAdmin from './components/SuperAdmin/UpdateAdmin';
 import Dashboard from './components2/dashboard/index';
 import CarsList from './components2/dashboard/carsList';
 import ClientList from './components2/dashboard/clientList';
+import ReservationList from "./components2/dashboard/reservations"
+import ReservationForm from "./components2/dashboard/reservationForm"
 import Reclamation from './components2/dashboard/reclamation';
 import AdminList from './components2/dashboard/adminList';
 import { ProtectedRoute} from './protected.route';
@@ -33,7 +35,7 @@ function App() {
   return (
 
     <Router>
-      <div classNameName="App">
+      <div className="App">
 
         <Routes>
           
@@ -45,6 +47,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reservation" element={<Reservation />} />
+          <Route path="/complaint" element={<Complaint/>} />
+          <Route path="/reservations" element={<ReservationList/>} />
+          <Route path="/book/:carId" element={<ReservationForm/>} />
 
           {/* end clients routes */}
 
@@ -54,6 +59,7 @@ function App() {
           <Route path="/clients" element={ <ProtectedRoute> <ClientList /> </ProtectedRoute> } />
           <Route path="/reclamation" element={ <ProtectedRoute> <Reclamation /> </ProtectedRoute> } />
           <Route path="/admin" element={ <ProtectedRoute> <AdminList /> </ProtectedRoute> } />
+          
 
 
           <Route path="/profil" element={<Profil />} />

@@ -1,6 +1,163 @@
-import React from "react";
+
 import Navbar from "../Navbar";
+import axios from 'axios';
+import React, { useEffect , useState} from 'react';
+import Swal from "sweetalert2";
+import moment from "moment"
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { getReservation } from "../../redux/actions/reservation.action"
 function Historical() {
+  const dispatch = useDispatch();
+  const { reservations } = useSelector((state) => state.book)
+
+  const navigate = useNavigate();
+  const [reclamation,setrecalamtion] = useState([]);
+
+//delete deletereservation
+
+  
+function deletereservation(id){
+  const token = localStorage.getItem('token');
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  }
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+     await axios.delete("http://127.0.0.1:8000/api/DeleteReservation/"+id, {
+        headers: headers
+      })
+    .then(res => {
+        console.log('hahhahhhhhah',res.data.message)
+        
+    
+     
+    
+    }).catch(err => {
+      console.log(err)
+    })
+    window.location.reload(false);
+
+      Swal.fire(
+        'Deleted!',
+        'Reservation canceled',
+        'success'
+      )
+    }
+  })
+
+ 
+ 
+}
+
+function navigat(){
+  navigate("../complaint", { replace: true });
+}
+
+
+  //list reclamation
+  useEffect(() => {
+    let isMounted = true
+  
+    const token = localStorage.getItem('token');
+   
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + `${token}`
+    }
+  
+    axios.get("http://127.0.0.1:8000/api/afficherReclamationUser", {
+        headers: headers
+      })
+    .then(res => {
+        console.log('heydata',res.data)
+        setrecalamtion(res.data.message)
+     
+    
+    }).catch(err => {
+      console.log(err)
+    })
+
+    dispatch(getReservation(token))
+  
+    return() => {isMounted =false
+    };
+  
+    
+  },[]);
+
+
+  //delete button
+
+  
+function deleteOperation(id){
+  const token = localStorage.getItem('token');
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  }
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+     await axios.delete("http://127.0.0.1:8000/api/DeleteReclamation/"+id, {
+        headers: headers
+      })
+    .then(res => {
+        console.log('hahhahhhhhah',res.data.message)
+        
+    
+     
+    
+    }).catch(err => {
+      console.log(err)
+    })
+    window.location.reload(false);
+
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+    }
+  })
+
+ 
+ 
+}
+
+function navigat(){
+  navigate("../complaint", { replace: true });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       return (
         <>
         <div><Navbar /></div>
@@ -32,43 +189,35 @@ function Historical() {
           <br />
           <br />
           <br />
-         <table className="table table-striped">
+         <table className="table">
             <thead>
               <tr>
-                <th scope="col">Etat</th>
-                <th scope="col">Véhicule</th>
-                <th scope="col">Date début</th>
-                <th scope="col">Date fin</th>
+                <th>Booked At</th>
+                <th>Véhicule</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Date début</th>
+                <th>Date fin</th>
+                
               </tr>
-            </thead>
+            </thead >
             <tbody>
-              <tr>
-                <td>En cours</td>
-                <td>MERCEDES-BENZ</td>
-                <td>12/05/2022</td>
-                <td>16/05/2022</td>
-                <button type="submit" className="btn btn-primary btn-round">Update </button>
-              </tr>
-              <tr>
-                
-                <td>Validé</td>
-                <td>Fiat 500</td>
-                <td>03/11/2021</td>
-                <td>12/11/2021</td>
-               <button id="red" className="btn btn-primary btn-round"type="submit"> Delete</button>
-              </tr>
-              <tr>
-                
-                <td>Validé</td>
-                <td>BMW</td>
-                <td>26/08/2021</td>
-                <td>31/08/2021</td>
-                <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
-              </tr>
-                
+              {reservations !== undefined && reservations !== null && reservations.map((book,idx)=>{
+                return (
+                  <tr>
+                    <td>{moment(book.created_at).fromNow()}</td>
+                  <td>{book.vehicule.Matricule}</td>
+                  <td>{book.name}</td>
+                  <td>{book.lastname}</td>
+                  <td>{book.date_deb}</td>
+                  <td>{book.date_fin}</td>
+                  <button id="red" className="btn btn-primary btn-round"type="submit" onClick={()=>deletereservation(book.id)} > Cancel</button>
+                </tr>
+              )
+              })}
             </tbody>
           </table>
-          <button className="buton" type="button"> Add Reservation</button>
+          
           </div>
           </div>
           </div>
@@ -88,52 +237,39 @@ function Historical() {
                 <div className="col-xs-12">
                   <div className="wheel-header text-center marg-lg-t145 marg-sm-t50 marg-lg-b90">
                   <h3>List  Complaints</h3>
-          <table className="table table-bordered">
+                  <table className="table table-striped">
             <thead>
               <tr>
-             
-                <th scope="col">Date</th>
-                <th scope="col">Complaint</th>
+                  
+                  <th className="text-center" scope="col"> Date</th>
+                  <th  className="text-center" scope="col">Complaint</th>
+                  {/* <th scope="col">User</th> */}
+                  <th  className="text-center" scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
+            {reclamation?.map((Reclamation) => (
               <tr>
                 
-                <td>22/06/2019</td>
-                <td> Objet : Demande d'indemnisation
-                  Le 21/06/2019, j'ai effectué une réservation par internet auprès de votre agence pour une location du 21/06 au 25/06.
-                  Comme vous le constaterez sur le document ci-joint, j'ai choisi le véhicule ****, ce qui correspond chez vous à la catégorie A. J'avais également opté pour les options ****.
-                  Or, lorsque je me suis présenté pour récupérer le véhicule, celui-ci n'était plus disponible. Vous m'avez alors proposé un véhicule d'une catégorie inférieure, le **** et vous m'avez alors refusée toute remise commerciale.
-                  Par la présente, je vous mets en demeure de me verser un dédommagement à hauteur de [montant] euros pour le préjudice subi auquel s'ajoutera la différence de tarif entre les deux catégories soit **** euros.
-                  A défaut de réponse de votre part dans un délai de 8 jours, je me verrai dans l'obligation d'alerter la direction départementale de la concurrence, de la consommation et de la répression des fraudes à propos de vos agissements ainsi que d'engager un recours devant les tribunaux compétents.
-                  Je vous prie de croire, Madame, Monsieur, à mes sincères salutations.</td>
+                <td >{Reclamation.created_at.split('T')[0]}</td>
+
+                <td>{Reclamation.reclamation}</td>
+                {/* <td>{Reclamation.id}</td> */}
                 <td>
-                  <br />
-                  <br />
-                  <br />
-                  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
+                
+                <button id="red" className="btn btn-primary btn-round"type="submit" onClick={()=>deleteOperation(Reclamation.id)} > Delete</button>
                 </td>
+
+                
               </tr>
-              <tr>
-              
-                <td>03/11/2020</td>
-                <td>Objet : Réclamation au sujet de la facture 
-                  Madame, Monsieur,
-                  Pour la période du  au, j'ai loué un véhicule auprès de votre agence de location de voiture sous le contrat numéro.
-                  Lors de la restitution du véhicule, nous avons procédé à un état des lieux contradictoire du véhicule et constaté que le kilométrage était de.
-                  Or vous m'avez facturé un kilométrage nettement supérieur ainsi qu'une réparation d'une rayure non constatée sur l'état des lieux et une pénalité pour des frais de carburant, ce que je conteste vivement. Par conséquent, je vous mets en demeure de revoir le montant de votre facture.
-                  Sans réponse de votre part dans un délai de 8 jours, je me verrai dans l'obligation d'alerter la direction départementale de la concurrence, de la consommation et de la répression des fraudes à propos de vos agissements ainsi que d'engager un recours devant les tribunaux compétents.
-                  Je vous prie de croire, Madame, Monsieur, à mes sincères salutations.</td>
-                <td>
-                  <br />
-                  <br />
-                  <br />
-                  <button id="red" className="btn btn-primary btn-round" type="submit"> Delete</button>
-                </td>
-              </tr>
-            </tbody>
+             
+                
+          
+            ))}
+              </tbody>
           </table>
-          <button className="buton" type="button"> Add Complaint</button>
+          
+          <button type="button" className="btn btn-success" onClick={()=>navigat()}> Add Complaint</button>
           </div>
           </div>
           </div>

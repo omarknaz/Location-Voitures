@@ -45,19 +45,20 @@ export const login = (body,navigate ) => async dispatch => {
        // swal("success",res.data.message,"success");
        
         res.data.success !== undefined && res.data.success && 
+        console.log("aaaa",res.data)
         localStorage.setItem("user",JSON.stringify(res.data))
         localStorage.setItem("token",res.data.access_token)
         localStorage.setItem("role",res.data.role)
-
+        localStorage.setItem("userid",res.data.user.id)
         var role =localStorage.getItem("role");
         if (role == 'user'){
             navigate('/');
         }
         else if (role == 'admin') {
-            navigate('/admin')
+            navigate('/dashboard')
         }
         else if (role ='Superadmin'){
-            navigate('/superadministrateurs')
+            navigate('/dashboard')
         }
 
 

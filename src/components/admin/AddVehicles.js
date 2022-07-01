@@ -59,7 +59,7 @@ function AddVehicles() {
                               
                               <input type="file"  accept="image/*"  onChange={(e)=>   setVehiculePic(e.target.file)}  />
 
-                              {/*<input type="file"  accept="image/*" callbackFunction={(file_arr) => {setVehiculePic(file_arr[0])}}  />*/}
+                              <input type="file"  accept="image/*" callbackFunction={(file_arr) => {setVehiculePic(file_arr[0])}}  />
                             
                               
                               <label htmlFor="input-val1">

@@ -5,7 +5,10 @@
 import { combineReducers } from 'redux'
 
 import userReducer from './user.reducer'
+import adminReducer from "./admin.reducers"
+import reservationReducer from "./reservation.reducers"
 export default combineReducers({
-
-  user: userReducer
+  admin: adminReducer,
+  user: userReducer,
+  book: reservationReducer
 })

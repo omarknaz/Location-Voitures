@@ -1,8 +1,51 @@
-import React from "react";
-import { Link } from 'react-router-dom';
-import Navbar from "./Navbar";
+import React, { useEffect } from "react";
+import axios from "axios";
+import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import { Modal } from "react-bootstrap";
 function Listing () {
+  const isToken = localStorage.getItem("token");
+  const [Cars,setcar] =useState([]);
+  const navigate =useNavigate();
+  const [ modalOpen,setModalOpen ] = useState(false)
+  const toggle = () => {
+    setModalOpen(!modalOpen)
+  }
+  useEffect(() => {
+
+    let isMounted = true
+  
+    const token = localStorage.getItem('token');
+   
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + `${token}`
+    }
+  
+    axios.get("http://127.0.0.1:8000/api/afficherVehicule", {
+        headers: headers
+      })
+    .then(res => {
+      console.log("",res.data.cars);
+      setcar(res.data.cars)
+    }).catch(err => {
+      console.log(err)
+    })
+  
+    return() => {isMounted =false
+    };
+  
+  },[]);
+
+
+
+
+
+
+
+ 
           return (
             <>
        <div><Navbar /></div>
@@ -39,302 +82,44 @@ function Listing () {
                   <div className="product-list product-list2 wheel-bgt clearfix">
                     <div className="row">
                       <div className="col-xs-12">
+                      {Cars.map((cars) => {
+                        return (
+                          <>
+                        { cars.etat === "disponible" &&
                         <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
+
                           <div className="product-table2">
                             <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i29.jpg" alt="img" className="img-responsive" />
+                            {/* src={`http://localhost:8000/assets/${cars.vehicule_pic}`} */}
+                              <img src={`http://localhost:8000/assets/${cars.vehicule_pic}`} alt="img" className="img-responsive" style={{ width: "50%" }} />
                             </div>
                           </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">2016 Marcedes-Benz SLK</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i40.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
+                          <div className="product-table3">
+                          <div style={{ fontSize:"24px",letterSpacing:"1.3px",textTransform:"uppercase",fontWeight:"bold",lineHeight:"10rem" }}>{cars.Matricule}</div>  
+                          <div style={{ fontSize:"22px",color:"#ff7043", fontWeight: "600" }}>{cars.price}DT</div>
+                          
+                          <button
+                            onClick={()=> {
+                              if (isToken) {
+                                navigate(`/book/${cars.id}`)
+                              }else {
+                                navigate("/login")
+                              }
+                            }}
+                            className="btn btn-success" 
+                            style={{ backgroundColor:"rgb(255, 112, 67)", borderRadius:"10%"}}>
+                            Booked Now 
+                          </button>
+                          
                           </div>
+                          
                         </div>
+                           }
+                        </>
+                      )})}
                       </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i28.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">2016 Chevrolet Malibu</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i32.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i27.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">Bugatti Veyron</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i33.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i34.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">2016 Nissan Juke</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i35.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i30.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">2016 Audi S4</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i34.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i28.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">2016 Chevrolet Malibu</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i32.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i27.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">Bugatti Veyron</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i33.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i31.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">2016 Nissan Juke</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i35.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xs-12">
-                        <div className="product-elem-style1 product-elem-style  wheel-bg1 clearfix">
-                          <div className="product-table2">
-                            <div className="img-wrap img-wrap2 product-cell">
-                              <img src="assets/images/i30.jpg" alt="img" className="img-responsive" />
-                            </div>
-                          </div>
-                          <div className="product-table3  ">
-                            <div className="text-wrap text-wrap2 product-cell">
-                              <div className="title">2016 Audi S4</div>
-                              <div className="price-wrap product-cell">
-                                <span>$79</span><sup>00</sup>/Day
-                              </div>
-                            </div>
-                            <div className="img-wrap img-wrap3 product-cell">
-                              <img src="assets/images/i34.jpg" alt="img" className="img-responsive" />
-                            </div>
-                            <div className="text-wrap  text-wrap3 product-cell">
-                              <ul className="metadata metadata2">
-                                <li>2 seats</li>
-                                <li>2 bags</li>
-                                <li>150 mpg</li>
-                                <li>airbags</li>
-                                <li>manual/auto</li>
-                                <li>ac</li>
-                              </ul>
-                              <div className="wheel-view-link">
-                                <a href="#">View Details</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      
+
                     </div>
                   </div>
                 </div>
@@ -374,6 +159,11 @@ function Listing () {
                 </div>
               </div>
             </div>
+
+            <Modal show={modalOpen}>
+            </Modal>
+
+
             </>
           );
         }
